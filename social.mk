@@ -37,7 +37,7 @@ correct:
 	#cat hippo_left.fa hippo_right.fa > both.fa
 	#cat hippo_left.q hippo_right.q > both.q
 	#$(REPTILE)/reptile-omp config.analy #Do error corection
-	$(REPTILE)/util/reptile_merger/reptile_merger both.fa both.reptile.err both.reptile.corr.fa #make error corrected fasta file
+	$(REPTILE)/utils/reptile_merger/reptile_merger both.fa both.reptile.err both.reptile.corr.fa #make error corrected fasta file
 	grep -aA1 '/1' both.reptile.corr.fa > hippo.left.rept.corr.fa
 	grep -aA1 '/2' both.reptile.corr.fa > hippo.right.rept.corr.fa
 
