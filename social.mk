@@ -7,6 +7,7 @@
 ###         	is set properly
 ###         -Make sure barcode file is located with
 ###           BCODES= tag
+###          -Make sure you pull the config.analy file from GIT, or make you own.
 ############################################
 TRINITY := /home/macmanes/trinityrnaseq_r2013-02-25
 BCODES := /home/macmanes/Dropbox/barcodes.fa
