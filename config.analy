@@ -1,0 +1,26 @@
+InFaFile        both.fa
+IQFile          both.q
+OErrFile        both.reptile.err
+QFlag           1
+IFlag           1
+OKmerHistFile           both.kmerhist
+QHistFile               both.qualhist
+
+
+BatchSize       7500000
+KmerLen         13
+hd_max          1
+Step            11
+ExpectSearch    4
+T_ratio         0.5
+
+
+######## The following parameters need to be tuned to specific dataset ########
+
+
+MaxErrRate      0.02
+QThreshold      74
+MaxBadQPerKmer  8
+Qlb             67
+T_expGoodCnt 48
+T_card 1
