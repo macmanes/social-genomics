@@ -1,12 +1,7 @@
-#!/usr/bin/make -s
+#!/usr/bin/make -rRsf
 
 ###########################################
-###        -usage 'make -sf social.mk READ1=/location/or/read1.fastq READ2=/location/of/read2.fastq'
-###        
-###
-###
-###
-###
+###        -usage 'social.mk READ1=/location/or/read1.fastq READ2=/location/of/read2.fastq'
 ###
 ###         -Make sure your Trinity base directory 
 ###         	is set properly
@@ -16,6 +11,15 @@
 TRINITY := /home/macmanes/trinityrnaseq_r2013-02-25
 BCODES := /home/macmanes/Dropbox/barcodes.fa
 CONFIG:= /home/macmanes/Dropbox/config.analy
+
+
+
+##### No Editing should be necessary below this line  #####
+
+
+
+
+
 
 RUN=run
 READ1=left.fastq
@@ -27,9 +31,9 @@ all: check trim correct merge assemble rsem
 check:
 	@echo "\n\n\n"###I am checking to see if you have all the dependancies installed.### "\n"
 	command -v trimmomatic-0.30.jar >/dev/null 2>&1 || { echo >&2 "I require Trimmomatic but it's not installed.  Aborting."; exit 1; }
-	@echo Trimmomatoc is Installed
-	command -v SolexaQA.pl >/dev/null 2>&1 || { echo >&2 "I require SolexaQA.pl but it's not installed.  Aborting."; exit 1; }
-	@echo SolexaQA is installed
+	@echo Trimmomatic is Installed
+	command -v $(TRINITY/Trinity.pl) >/dev/null 2>&1 || { echo >&2 "I require Trinity but it's not installed.  Aborting."; exit 1; }
+	@echo Trinity is Installed
 	command -v fastq-converter-v2.0.pl >/dev/null 2>&1 || { echo >&2 "I require fastq-converter-v2.0.pl (Reptile package) but it's not installed.  Aborting."; exit 1; }
 	command -v reptile-omp >/dev/null 2>&1 || { echo >&2 "I require reptile-omp but it's not installed.  Aborting."; exit 1; }
 	command -v reptile_merger >/dev/null 2>&1 || { echo >&2 "I require reptile_merger but it's not installed.  Aborting."; exit 1; }
